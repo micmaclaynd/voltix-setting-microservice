@@ -9,12 +9,18 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Aspire.StackExchange.Redis" Version="9.1.0" />
+		<PackageReference Include="Grpc.AspNetCore" Version="2.70.0" />
 		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.2" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="8.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\Voltix.Shared\Voltix.Shared.csproj" />
+	</ItemGroup>
+	
+	<ItemGroup>
+        <Protobuf Include="..\Voltix.Shared\Protos\setting.proto" GrpcServices="Server" />
 	</ItemGroup>
 
 </Project>
