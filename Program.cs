@@ -8,8 +8,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.AddServiceDefaults();
 builder.AddRedisClient("voltix-setting-microservice-cache");
 
-builder.Services.AddGrpc();
+builder.Services.AddGrpc().AddJsonTranscoding();
 builder.Services.AddControllers();
+builder.Services.AddGrpcSwagger();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<ISettingsService, SettingService>();
